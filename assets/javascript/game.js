@@ -3,13 +3,30 @@
 var wins = 0;
 var losses = 0;
 var Guesses_Left;
-var words = ["dog", "cat", "fish", "octupus", "tiger", "shark", "wolf", "frog", "alligator", "deer", "snake", "ladybug" ];
+var words = [
+    "dog",
+    "cat", 
+    "fish", 
+    "octupus", 
+    "tiger", 
+    "shark", 
+    "wolf", 
+    "frog", 
+    "alligator", 
+    "deer", 
+    "snake", 
+    "ladybug" 
+];
 
+function reset() {
+    document.getElementById("used").textContent ="Letters already used: ";
+    hangman();
+    document.getElementById("GR").textContent ="Number of guesses remaining: " + Guesses_Left;
+}
 
 // Decleration and definition of the hangman game function//
 
 function hangman() {
-    
 
 //Generate a random number which will be used to pick a word from the words array to be guessed by the player// 
 //Decleration of underScore which will be used to display the letters which haven't been guessed.//
@@ -26,7 +43,7 @@ console.log(choosenWord);
     }
 console.log(underScore.length);
 // decleration of the local variable which will be used to display the number of guesses the player has remaining//    
-// Player is limited to 4 additional guesses than the length of the choosen word.// 
+// Player is limited to 3 additional guesses than the length of the choosen word.// 
 // Displays the number of underscores to the HTML document.//
 
     Guesses_Left = underScore.length + 3;
@@ -70,31 +87,28 @@ console.log(Guesses_Left);
             if((underScore.includes("_") == false) && (Guesses_Left>0)){
                 alert("You won!");
                 wins ++;
+                reset();
                 document.getElementById("rightGuess").textContent ="Player Wins: " + (wins);
+            }
+            
+            else if((underScore.includes("_")==false) && (Guesses_Left == 0)){
+                alert("You just barely won!");
+                wins ++;
+                reset();
+                document.getElementById("rightGuess").textContent = "Player Wins: " + (wins);
+            }
+
+        // if any underscores remain you lose the game and are given an alert.//
+
+            else if((underScore.includes("_")==true)&&(Guesses_Left==0)){
+                alert("You lost and were eaten by the animals of the jungle.");
+                losses ++;
+                reset();
+                document.getElementById("wrongGuess").textContent = "Player Losses: " + (losses);
             }
         }
         }
     }
-// Once you've run out of guesses the while loop is exited and the game checks to see if you guessed the word on the last attemp.//    
-
-    if((underScore.includes("_")==false) && (Guesses_Left == 0)){
-        alert("You just barely won!");
-        wins ++;
-        document.getElementById("rightGuess").textContent = "Player Wins: " + (wins);
-    }
-
-// if any underscores remain you lose the game and are given an alert.//
-
-    else if((underScore.includes("_")==true)&&(Guesses_Left==0)){
-        alert("You lost and were eaten by the animals of the jungle.");
-        losses ++;
-        document.getElementById("wrongGuess").textContent = "Player Losses: " + (losses);
-    }
 }
 
-function reset() {
-    Guesses_Left = 0;
-    document.getElementById("used").textContent = "";
-    
-}
 
