@@ -33,8 +33,8 @@ console.log(underScore.length);
     document.getElementById("underscores").textContent = underScore;
 console.log(Guesses_Left);
 //While loop so you can put in input till the Guesses remaining variable is equal to 0//
-
-    while(Guesses_Left>0){
+    var initial_Num_Guesses = Guesses_Left;
+    for(i=0;i<initial_Num_Guesses+1; i++){
 
 //Promps player to enter a letter that is stored in the local variable guess and then guess replaces the underscore at the index of the letter in the word.
         document.onkeyup = function(event){
@@ -71,14 +71,13 @@ console.log(Guesses_Left);
                 alert("You won!");
                 wins ++;
                 document.getElementById("rightGuess").textContent ="Player Wins: " + (wins);
-                break;
             }
         }
         }
     }
 // Once you've run out of guesses the while loop is exited and the game checks to see if you guessed the word on the last attemp.//    
 
-    if((underScore.includes("_")==false) && (Guesses_Left === 0)){
+    if((underScore.includes("_")==false) && (Guesses_Left == 0)){
         alert("You just barely won!");
         wins ++;
         document.getElementById("rightGuess").textContent = "Player Wins: " + (wins);
@@ -86,12 +85,16 @@ console.log(Guesses_Left);
 
 // if any underscores remain you lose the game and are given an alert.//
 
-    else{
+    else if((underScore.includes("_")==true)&&(Guesses_Left==0)){
         alert("You lost and were eaten by the animals of the jungle.");
         losses ++;
         document.getElementById("wrongGuess").textContent = "Player Losses: " + (losses);
     }
 }
 
-
+function reset() {
+    Guesses_Left = 0;
+    document.getElementById("used").textContent = "";
+    
+}
 
