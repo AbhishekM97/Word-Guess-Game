@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+    <!--CSS reset link-->
+    <link rel="stylesheet" href="assets\css\reset.css">
+    <!---CSS link-->
+    <link rel="stylesheet" href="assets\css\style.css">
+</head>
+<body>
+    <header>
+        <h1>HANGMAN GAME!</h1>    
+        <h2>Animal Style</h2>
+    </header>     
+    <div id="container">   
+            <h1> Press the play button to get started!</h1>    
+            <br>
+            <br>
+            <div id="GR">Number of guesses remaing:</div>
+            <br>
+            <br>
+            <div id="used">Letters already used:</div>
+            <br>
+            <br>
+            <div id="underscores">_ _ _ _</div>
+            <br>
+            <br>
+            <div id="rightGuess">Player Wins:</div>
+            <br>
+            <br>
+            <div id="wrongGuess">Player Losses:</div>
+            <br>
+            <br>
+            <div id="button">
+                <button type="button" id="Button" onclick="hangman()">Play Hangman</button>
+            </div>
+    </div>
+    <footer>@Copyright 2019</footer>
+    <script src="assets\javascript\game.js"></script>
+</body>
+</html>

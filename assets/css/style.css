@@ -1,0 +1,80 @@
+header{
+    margin: 0px auto 10px auto;
+    background-color: rgb(224, 108, 41);
+    border: 4px solid black;
+    text-align: center;
+    color: white;
+}
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 80px;
+    margin: 10px auto 0px auto;
+    background-color: rgb(224, 108, 41);
+    border: 4px solid black;
+    text-align: center;
+    color: white;
+}
+
+ h2{
+    display: block;
+    font-size: 20px;
+}
+body{
+    background-image: url("https://images-na.ssl-images-amazon.com/images/I/71tSIWYWdxL._SY450_.jpg");
+    width: 100%;
+    height: 980px;
+}
+#container{
+    opacity: 0.8;
+    display: block;
+    margin: 0px auto 0px auto;
+    height: 76%;
+    max-width: 980px;
+    max-height: 980px;
+    background-color: white;
+    border: 4px solid black;
+}
+#container h1{
+    text-align: center;
+    font-family: fantasy;
+}
+#underscores{
+    opacity: 1;
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+#rightGuess{
+    opacity: 1;
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+#wrongGuess{
+    opacity: 1;
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+#GR{
+    opacity: 1;
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+#used{
+    opacity: 1;
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+
+#button{
+    text-align: center;
+}
+#Button{
+    height: 40px;
+
+}
