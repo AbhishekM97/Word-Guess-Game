@@ -21,7 +21,7 @@ var words = [
 function reset() {
     document.getElementById("used").textContent ="Letters already used: ";
     hangman();
-    document.getElementById("GR").textContent ="Number of guesses remaining: " + Guesses_Left;
+   
 }
 
 // Decleration and definition of the hangman game function//
@@ -48,6 +48,8 @@ console.log(underScore.length);
 
     Guesses_Left = underScore.length + 3;
     document.getElementById("underscores").textContent = underScore;
+    document.getElementById("GR").textContent = "Number of guesses remaining: " + Guesses_Left;
+    
 console.log(Guesses_Left);
 //While loop so you can put in input till the Guesses remaining variable is equal to 0//
     var initial_Num_Guesses = Guesses_Left;
